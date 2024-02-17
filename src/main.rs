@@ -1,3 +1,8 @@
+use bip39::Mnemonic;
+use itertools::Itertools;
+
 fn main() {
-    println!("Hello, world!");
+    let words = 24;
+    let mnemonic = Mnemonic::generate(words).unwrap();
+    println!("{}", mnemonic.word_iter().join(" "));
 }
